@@ -24,7 +24,7 @@ class AddNoteButtomSheet extends StatelessWidget {
               hint: "Content",
               maxLines: 5,
             ),
-            Gap(32),
+            Gap(100),
             CustomButton(),
           ],
         ),
