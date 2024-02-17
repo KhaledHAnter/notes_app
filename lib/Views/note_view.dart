@@ -19,7 +19,10 @@ class NotesView extends StatelessWidget {
             ),
             context: context,
             builder: (context) {
-              return const AddNoteButtomSheet();
+              return const Padding(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                child: AddNoteButtomSheet(),
+              );
             },
           );
         },
