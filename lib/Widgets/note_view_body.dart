@@ -16,7 +16,10 @@ class NoteViewBody extends StatelessWidget {
       child: Column(
         children: [
           Gap(50),
-          CustomAppBar(),
+          CustomAppBar(
+            title: 'Notes',
+            icon: Icons.search,
+          ),
           Expanded(child: NotesListView()),
         ],
       ),
