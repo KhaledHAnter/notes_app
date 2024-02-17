@@ -14,7 +14,14 @@ class AddNoteButtomSheet extends StatelessWidget {
       child: Column(
         children: [
           Gap(24),
-          CustomTextField(),
+          CustomTextField(
+            hint: "Title",
+          ),
+          Gap(16),
+          CustomTextField(
+            hint: "Content",
+            maxLines: 5,
+          ),
         ],
       ),
     );
