@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app_th/Pages/home_page.dart';
+import 'package:note_app_th/Views/note_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {HomePage.id: (context) => const HomePage()},
-      initialRoute: HomePage.id,
+      routes: {
+        NotesView.id: (context) => const NotesView(),
+      },
+      initialRoute: NotesView.id,
     );
   }
 }
