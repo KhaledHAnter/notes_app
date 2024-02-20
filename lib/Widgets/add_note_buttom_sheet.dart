@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:note_app_th/Widgets/custom_button.dart';
-import 'package:note_app_th/Widgets/custom_text_field.dart';
+import 'package:note_app_th/Widgets/add_note_form.dart';
 
 class AddNoteButtomSheet extends StatelessWidget {
   const AddNoteButtomSheet({super.key});
@@ -13,21 +11,7 @@ class AddNoteButtomSheet extends StatelessWidget {
         horizontal: 16,
       ),
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Gap(24),
-            CustomTextField(
-              hint: "Title",
-            ),
-            Gap(16),
-            CustomTextField(
-              hint: "Content",
-              maxLines: 5,
-            ),
-            Gap(100),
-            CustomButton(),
-          ],
-        ),
+        child: AddNoteForm(),
       ),
     );
   }
