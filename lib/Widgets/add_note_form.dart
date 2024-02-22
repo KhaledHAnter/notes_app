@@ -42,7 +42,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: "Content",
             maxLines: 5,
           ),
-          const Gap(100),
+          const Gap(16),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
