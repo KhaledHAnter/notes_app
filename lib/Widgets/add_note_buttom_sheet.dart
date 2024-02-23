@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app_th/Widgets/add_note_form.dart';
 import 'package:note_app_th/cubits/add_note_cubit/add_notes_cubit.dart';
+import 'package:note_app_th/cubits/notes_cubit/notes_cubit.dart';
 
 class AddNoteButtomSheet extends StatelessWidget {
   const AddNoteButtomSheet({super.key});
@@ -16,6 +17,7 @@ class AddNoteButtomSheet extends StatelessWidget {
             print("Failed ${state.errMessage}");
           }
           if (state is AddNoteSuccess) {
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
           }
         },
