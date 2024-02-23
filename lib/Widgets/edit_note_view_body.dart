@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:note_app_th/Models/note_model.dart';
 import 'package:note_app_th/Widgets/custom_appbar.dart';
 import 'package:note_app_th/Widgets/custom_text_field.dart';
+import 'package:note_app_th/Widgets/edit_note_colors_list.dart';
 import 'package:note_app_th/cubits/notes_cubit/notes_cubit.dart';
 
 class EditNoteViewBody extends StatefulWidget {
@@ -52,6 +53,10 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             },
             hint: widget.note.subTitle,
             maxLines: 5,
+          ),
+          const Gap(16),
+          EditNoteColorsList(
+            note: widget.note,
           ),
         ],
       ),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app_th/Widgets/add_note_buttom_sheet.dart';
 import 'package:note_app_th/Widgets/note_view_body.dart';
-import 'package:note_app_th/cubits/notes_cubit/notes_cubit.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
