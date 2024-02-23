@@ -1,31 +1,65 @@
 import 'package:flutter/material.dart';
 
 class ColorItem extends StatelessWidget {
-  const ColorItem({super.key});
+  const ColorItem({super.key, required this.isActive, required this.color});
+
+  final bool isActive;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
-      radius: 32,
-      backgroundColor: Colors.blue,
-    );
+    return isActive
+        ? CircleAvatar(
+            radius: 32,
+            backgroundColor: Colors.black,
+            child: CircleAvatar(
+              radius: 28,
+              backgroundColor: color,
+            ),
+          )
+        : CircleAvatar(
+            radius: 32,
+            backgroundColor: color,
+          );
   }
 }
 
-class ColorsListView extends StatelessWidget {
+class ColorsListView extends StatefulWidget {
   const ColorsListView({super.key});
 
+  @override
+  State<ColorsListView> createState() => _ColorsListViewState();
+}
+
+class _ColorsListViewState extends State<ColorsListView> {
+  int CurrentIndex = 0;
+  List<Color> colors = [
+    const Color(0xffF1DEDE),
+    const Color(0xffBBACC1),
+    const Color(0xff80727B),
+    const Color(0xff909580),
+    const Color(0xff545643),
+  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 32 * 2,
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: colors.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.all(1.0),
-            child: ColorItem(),
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: GestureDetector(
+              onTap: () {
+                CurrentIndex = index;
+                setState(() {});
+              },
+              child: ColorItem(
+                color: colors[index],
+                isActive: CurrentIndex == index,
+              ),
+            ),
           );
         },
       ),
